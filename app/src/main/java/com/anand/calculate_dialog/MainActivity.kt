@@ -8,8 +8,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.anand.calculate_dialog.databinding.ActivityMainBinding
 
-
-
 class MainActivity : AppCompatActivity() {
     var binding: ActivityMainBinding? = null
     var num1 = binding?.et1?.text.toString().toInt()
