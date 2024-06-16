@@ -30,17 +30,17 @@ class MainActivity : AppCompatActivity() {
                 alertDialog.setCancelable(false)
                 alertDialog.setTitle("Perform calculations on ${binding?.et1}")
                 alertDialog.setMessage("ADD ${binding?.et1}in number/n SUB ${binding?.et1} in number/n Press reset to set 0")
-                alertDialog.setPositiveButton("ADD") { _, _ ->
+                alertDialog.setPositiveButton("ADD",{ _, _ ->
                     var result = binding?.et1?.text.toString().toInt().plus(num1)
                     binding?.et1?.setText(result.toString())
-                }
-                alertDialog.setNegativeButton("SUB") { _, _ ->
+                })
+                alertDialog.setNegativeButton("SUB",{ _, _ ->
                     var result = binding?.et1?.text.toString().toInt().minus(num1)
                     binding?.et1?.setText(result.toString())
-                }
-                alertDialog.setNeutralButton("Reset") { _, _ ->
-                    binding?.et1?.setText(0)
-                }
+                })
+                alertDialog.setNeutralButton("Reset", { _, _ ->
+                    binding?.et1?.setText("0")
+                })
                 alertDialog.show()
             }
 
