@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         binding?.calculate?.setOnClickListener {
-
             if (binding?.et1?.text.toString().trim().isNullOrEmpty()){
                 binding?.et1?.error="Enter a Number"
             }
@@ -34,7 +33,6 @@ class MainActivity : AppCompatActivity() {
                 alertDialog.setPositiveButton("ADD") { _, _ ->
                     var result = binding?.et1?.text.toString().toInt().plus(num1)
                     binding?.et1?.setText(result.toString())
-
                 }
                 alertDialog.setNegativeButton("SUB") { _, _ ->
                     var result = binding?.et1?.text.toString().toInt().minus(num1)
