@@ -31,11 +31,11 @@ class MainActivity : AppCompatActivity() {
                 alertDialog.setTitle("Perform calculations on ${binding?.et1?.text}")
                 alertDialog.setMessage("ADD ${binding?.et1?.text}in number/n SUB ${binding?.et1?.text} in number/n Press reset to set 0")
                 alertDialog.setPositiveButton("ADD") { _, _ ->
-                    var result = binding?.et1?.text.toString().toInt().plus(num1)
+                    var result = binding?.et1?.text.toString().toDouble().plus(num1)
                     binding?.et1?.setText(result.toString())
                 }
                 alertDialog.setNegativeButton("SUB",{ _, _ ->
-                    var result = binding?.et1?.text.toString().toInt().minus(num1)
+                    var result = binding?.et1?.text.toString().toDouble().minus(num1)
                     binding?.et1?.setText(result.toString())
                 })
                 alertDialog.setNeutralButton("Reset", { _, _ ->
