@@ -10,7 +10,6 @@ import com.anand.calculate_dialog.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     var binding: ActivityMainBinding? = null
-    var num1 = binding?.et1?.text.toString().toInt()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,14 +25,15 @@ class MainActivity : AppCompatActivity() {
                 binding?.et1?.error="Enter a Number"
             }
             else {
+                var num1 = binding?.et1?.text.toString().toInt()
                 var alertDialog = AlertDialog.Builder(this)
                 alertDialog.setCancelable(false)
-                alertDialog.setTitle("Perform calculations on ${binding?.et1}")
-                alertDialog.setMessage("ADD ${binding?.et1}in number/n SUB ${binding?.et1} in number/n Press reset to set 0")
-                alertDialog.setPositiveButton("ADD",{ _, _ ->
+                alertDialog.setTitle("Perform calculations on ${binding?.et1?.text}")
+                alertDialog.setMessage("ADD ${binding?.et1?.text}in number/n SUB ${binding?.et1?.text} in number/n Press reset to set 0")
+                alertDialog.setPositiveButton("ADD") { _, _ ->
                     var result = binding?.et1?.text.toString().toInt().plus(num1)
                     binding?.et1?.setText(result.toString())
-                })
+                }
                 alertDialog.setNegativeButton("SUB",{ _, _ ->
                     var result = binding?.et1?.text.toString().toInt().minus(num1)
                     binding?.et1?.setText(result.toString())
