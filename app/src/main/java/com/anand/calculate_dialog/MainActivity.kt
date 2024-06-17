@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                 binding?.et1?.error="Enter a Number"
             }
             else {
-                var num1 = binding?.et1?.text.toString().toInt()
+                var num1 = binding?.et1?.text.toString().toDouble()
                 var alertDialog = AlertDialog.Builder(this)
                 alertDialog.setCancelable(false)
                 alertDialog.setTitle("Perform calculations on ${binding?.et1?.text}")
