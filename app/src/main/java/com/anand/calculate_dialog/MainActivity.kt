@@ -29,18 +29,18 @@ class MainActivity : AppCompatActivity() {
                 var alertDialog = AlertDialog.Builder(this)
                 alertDialog.setCancelable(false)
                 alertDialog.setTitle("Perform calculations on ${binding?.et1?.text}")
-                alertDialog.setMessage("ADD ${binding?.et1?.text}in number/n SUB ${binding?.et1?.text} in number/n Press reset to set 0")
+                alertDialog.setMessage("ADD ${binding?.et1?.text} in number\n SUB ${binding?.et1?.text} in number\n Press reset to set 0")
                 alertDialog.setPositiveButton("ADD") { _, _ ->
                     var result = binding?.et1?.text.toString().toDouble().plus(num1)
                     binding?.et1?.setText(result.toString())
                 }
-                alertDialog.setNegativeButton("SUB",{ _, _ ->
+                alertDialog.setNegativeButton("SUB") { _, _ ->
                     var result = binding?.et1?.text.toString().toDouble().minus(num1)
                     binding?.et1?.setText(result.toString())
-                })
-                alertDialog.setNeutralButton("Reset", { _, _ ->
+                }
+                alertDialog.setNeutralButton("Reset") { _, _ ->
                     binding?.et1?.setText("0")
-                })
+                }
                 alertDialog.show()
             }
 
